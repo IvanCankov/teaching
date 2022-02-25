@@ -8,5 +8,15 @@ with open('ip.txt') as file:
         hossz += 1
 
 print('2.feladat')
-print(f'{len(ip_cimek)}')
+print(f'Az állományban {len(ip_cimek)} darab adatsor van.')
 print(f'{hossz}')
+
+legkisebb = 'zzzz:zzzz:zzzz:zzzz'
+for ip_cim in ip_cimek:
+    if ip_cim < legkisebb:
+        legkisebb = ip_cim
+
+print('3.feladat')
+print('A legalacsonyabb tárolt IP-cím:')
+print(f'{min(ip_cimek)}')
+print(f'{legkisebb}')
