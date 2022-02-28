@@ -33,6 +33,7 @@ with open('sok.txt', 'w') as sok:
         if ip_cim.count('0') >= 18:
             print(f'{ip_cim}', file=sok)
 
+print('6. feladat:')
 sorszam = 9 #int(input('Kérek egy sorszámot: ')) - 1
 print(f'{ip_cimek[sorszam]}')
 
@@ -41,3 +42,18 @@ for index, part in enumerate(parts):
     if part == '0000':
         parts[index] = '0'
 print(':'.join(parts))
+
+szam = False
+for index, part in enumerate(parts):
+    if ip_cimek[index] == '0000' or ip_cimek[index + 1] == '0000' or ip_cimek[index + 2] == '0000' or ip_cimek[index + 3] == '0000':
+        ip_cimek[index + 0] = ' '
+        ip_cimek[index + 1].pop()
+        ip_cimek[index + 2].pop()
+        ip_cimek[index + 3].pop()
+        szam = True
+
+print('7. feladat:')
+if szam:        
+    print(':'.join(parts))
+else:
+    print('nem roviditheto tovabb')
